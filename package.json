@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "config": "export $(grep -v '^#' .env) && chmod +x ./env.sh && ./env.sh && cp config.json ./public/",
+   "config": "if [ -f .env ]; then export $(grep -v '^#' .env); fi && cp config.json ./public/",
     "start": "yarn run config && vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
