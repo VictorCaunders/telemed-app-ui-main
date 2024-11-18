@@ -2,13 +2,13 @@
 FROM node:22.10.0
 
 # Set the working directory in the container
-WORKDIR /skeleton
+WORKDIR /telemed-app-ui-main
 
 # Copy package.json and yarn.lock (if available) to the working directory
 COPY package.json ./
 
 # Install dependencies
-RUN yarn install --frozen-lockfile
+RUN yarn install 
 
 # Copy the rest of your application code to the container
 COPY . .
