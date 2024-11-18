@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "config": "export $(grep -v '^#' .env) && chmod +x ./env.sh && ./env.sh && cp config.json ./public/",
+    "config": "export $(grep -v '^#' .env) && chmod +x ./env.sh && ./env.sh && if [ -f config.json ]; then cp config.json ./public/; else echo 'config.json not found, skipping copy.'; fi",
     "start": "yarn run config && vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
