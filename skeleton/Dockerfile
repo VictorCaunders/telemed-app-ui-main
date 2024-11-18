@@ -19,5 +19,5 @@ RUN yarn build
 # Expose the port that your app runs on
 EXPOSE 10000
 
-# Command to run your application
-CMD ["yarn", "start"]
+# Command to run your application (for debugging, change to a shell)
+CMD ["/bin/sh"]
